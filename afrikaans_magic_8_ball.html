@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Magic 8-Ball</title>
+  </head>
+  <body>
+    <h1>Magic 8-Ball</h1>
+    <p>Stel 'n vraag met ja of nee en skud die magiese 8-bal om die antwoord te openbaar.</p>
+    <form>
+      <input type="text" id="question" placeholder="Enter your question here...">
+      <button type="button" onclick="shake()">Skud</button>
+    </form>
+    <p id="answer"></p>
+
+    <script>
+      function shake() {
+        // Get the user's question
+        var question = document.getElementById("question").value;
+
+        // Create an array of possible answers
+        var answers = [
+			"Dit is seker",
+			"Dit is beslis so",
+			"Sonder twyfel",
+			"Ja, beslis",
+			"Jy mag daarop vertrou",
+			"Soos ek dit sien, ja",
+			"Waarskynlik",
+			"Uitsig goed",
+			"Ja",
+			"Tekens wys na ja",
+			"Antwoord is vaag, probeer weer",
+			"Vra weer later",
+			"Beter om nie nou te vertel nie",
+			"Kan nie nou voorspel nie",
+			"Fokus en vra weer",
+			"Moenie daarop reken nie",
+			"Uitsig is nie so goed nie",
+			"My bronne sê nee",
+			"Twyfelagtig",
+			"Nee"
+        ];
+
+        // Generate a random number to select an answer
+        var answerIndex = Math.floor(Math.random() * answers.length);
+
+        // Display the answer to the user
+        document.getElementById("answer").innerHTML = answers[answerIndex];
+      }
+    </script>
+  </body>
+</html>
